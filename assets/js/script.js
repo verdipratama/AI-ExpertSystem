@@ -1,7 +1,7 @@
 var app = new Vue({
-  el: "#app",
+  el: '#app',
   data: {
-    name: "",
+    name: '',
     submited: true,
     mulai: false,
     selesai: false,
@@ -18,14 +18,14 @@ var app = new Vue({
     },
     bobot: [0.48, 0.08, 0.36, 0.64, 0.16, 0.12, 0.04, 0.8],
     cfCombine: 0,
-    diagnostic: "",
+    diagnostic: '',
     home: true,
     about: false,
     info: false,
   },
   methods: {
     init: function () {
-      this.name = "";
+      this.name = '';
       this.submited = true;
       this.mulai = false;
       this.selesai = false;
@@ -40,52 +40,52 @@ var app = new Vue({
         6: false,
         7: false,
       };
-      this.diagnostic = "";
+      this.diagnostic = '';
       this.cfCombine = 0;
-      $("#intro").alert("show");
+      $('#intro').alert('show');
     },
 
     goHome: function () {
       this.home = true;
       this.about = false;
       this.info = false;
-      $("#homeButton").addClass("active");
-      $("#aboutButton").removeClass("active");
-      $("#infoButton").removeClass("active");
-      $(".navbar-collapse").collapse("hide");
+      $('#homeButton').addClass('active');
+      $('#aboutButton').removeClass('active');
+      $('#infoButton').removeClass('active');
+      $('.navbar-collapse').collapse('hide');
     },
 
     goInfo: function () {
       this.home = false;
       this.about = false;
       this.info = true;
-      $("#aboutButton").removeClass("active");
-      $("#homeButton").removeClass("active");
-      $("#infoButton").addClass("active");
-      $(".navbar-collapse").collapse("hide");
+      $('#aboutButton').removeClass('active');
+      $('#homeButton').removeClass('active');
+      $('#infoButton').addClass('active');
+      $('.navbar-collapse').collapse('hide');
     },
 
     goAbout: function () {
       this.home = false;
       this.about = true;
       this.info = false;
-      $("#aboutButton").addClass("active");
-      $("#homeButton").removeClass("active");
-      $("#infoButton").removeClass("active");
-      $(".navbar-collapse").collapse("hide");
+      $('#aboutButton').addClass('active');
+      $('#homeButton').removeClass('active');
+      $('#infoButton').removeClass('active');
+      $('.navbar-collapse').collapse('hide');
     },
 
     inputName: function () {
-      if (this.name != "") {
-        $("#intro").alert("close");
+      if (this.name != '') {
+        $('#intro').alert('close');
         this.submited = false;
         this.mulai = true;
         this.visible[0] = true;
       } else {
         swal({
-          title: "Oops!",
-          text: "Anda harus memasukkan nama Anda",
-          icon: "warning",
+          title: 'Oops!',
+          text: 'Anda harus memasukkan nama Anda',
+          icon: 'warning',
         });
       }
     },
@@ -118,13 +118,13 @@ var app = new Vue({
       this.cfCombine = (Math.round(this.cfCombine * 10000) * 100) / 10000;
 
       if (this.cfCombine >= 0 && this.cfCombine <= 50) {
-        this.diagnostic = "KEMUNGKINAN yang KECIL";
+        this.diagnostic = 'KEMUNGKINAN yang KECIL';
       } else if (this.cfCombine > 51 && this.cfCombine <= 79) {
-        this.diagnostic = "KEMUNGKINAN";
+        this.diagnostic = 'KEMUNGKINAN';
       } else if (this.cfCombine > 80 && this.cfCombine <= 99) {
-        this.diagnostic = "KEMUNGKINAN YANG BESAR";
+        this.diagnostic = 'KEMUNGKINAN YANG BESAR';
       } else {
-        this.diagnostic = "SANGAT YAKIN";
+        this.diagnostic = 'SANGAT YAKIN';
       }
     },
   },
